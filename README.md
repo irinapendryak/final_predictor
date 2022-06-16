@@ -5,6 +5,21 @@ Service uses database from [Yandex.Realty classified](https://realty.yandex.ru) 
 
 The model uses only listings that are available for rent and located in St.Petersburg.
 
+Heatmap shows correlation between last price and other features:
+
+![Heatmap](https://github.com/irinapendryak/final_predictor/blob/main/pictures/heatmap.png) 
+
+Relations between last price and other features showed by scatter plots and box plots:
+
+![Open_plan](https://github.com/irinapendryak/final_predictor/blob/main/pictures/open_plan.png) 
+![Studio](https://github.com/irinapendryak/final_predictor/blob/main/pictures/studio.png)
+
+![Area](https://github.com/irinapendryak/final_predictor/blob/main/pictures/area.png) 
+![Rooms](https://github.com/irinapendryak/final_predictor/blob/main/pictures/rooms.png) 
+![Kitchen_area](https://github.com/irinapendryak/final_predictor/blob/main/pictures/kitchen_area.png) 
+![Living_area](https://github.com/irinapendryak/final_predictor/blob/main/pictures/living_area.png) 
+![Floor](https://github.com/irinapendryak/final_predictor/blob/main/pictures/floor.png) 
+![Renovation](https://github.com/irinapendryak/final_predictor/blob/main/pictures/renovation.png) 
 
 ## Model, choosen framework, hyperparams
 Both created machine learning models are **CatBoost models** but with different features used.
