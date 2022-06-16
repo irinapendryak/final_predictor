@@ -98,11 +98,13 @@ sudo ufw allow 5444
 ## How to run app using docker and which port it uses
 1. Pull the docker image:
 ```bash
-docker pull irinapendriak/final_predictor:v.0.3
+docker pull irinapendriak/final_predictor:v.0.4
 ```
 2. Run the docker image:
 ```bash
-docker run --network host -d irinapendriak/final_predictor:v.0.3
+docker run --network host -d irinapendriak/final_predictor:v.0.4
 ```
 
 It uses port **5444**.
+
+Link to my docker: https://hub.docker.com/repository/docker/irinapendriak/final_predictor
