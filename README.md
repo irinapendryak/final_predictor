@@ -1,1 +1,74 @@
-# final_predictor
+# Web-service for predicting apartment prices
+Flask web-service for predicting prices for renting an apartment in Saint-Petersburg.
+## Source data and some statistics
+Service uses database from [Yandex.Realty classified](https://realty.yandex.ru) which contains real estate listings for apartments in St. Petersburg and Leningrad Oblast from 2016 till the middle of August 2018. 
+
+The model uses only listings that are available for rent and located in St.Petersburg.
+
+
+## Model, choosen framework, hyperparams
+Both created machine learning models are CatBoost models but with different features used.
+
+Feautures for the models:
+| Model 1      | Model 2       |
+| :----------- | :-----------: |
+| open_plan    | open_plan     |
+| rooms        | rooms         |
+| area         | area          |
+| renovation   | renovation    |
+|              | floor         |
+|              | studio        |
+|              | kitchen_area  |
+|              | living_area   |
+
+Hyperparameteres were chosen based on 
+
+## How to install instructions and run your app with virtual environment
+1. Connect to your virtual machine.
+2. Create a virtual ebvironment with these commands:
+```bash
+sudo apt install python3.8-venv
+python3 -m venv env
+```
+3. Activate your virtual environemnt:
+```bash
+source env/bin/activate
+```
+4. Install required packages:
+```bash
+pip install -r requirements.txt
+```
+5. Run the code:
+```bash
+python app.py
+```
+## Information about Dockerfile
+Content of the Dokcerfile:
+```Dockerfile
+from ubuntu:20.04
+MAINTAINER Irina Pendriak
+RUN apt-get update -y
+COPY . /opt/final_predictor
+WORKDIR /opt/final_predictor
+RUN apt install -y python3-pip
+RUN pip3 install -r requirements.txt
+CMD python3 app.py
+```
+The solution is based on `ubuntu` image. We start the container, copy the source code to the docker image, change working directory, install `pip3`, install required packages from `requirements.txt` and run the app.
+## How to open the port in remote VM
+1. Connect to your remote virtual machine.
+2. Run the following command
+```bash
+sudo ufw allow 5444
+```
+## How to run app using docker and which port it uses
+1. Pull the docker image:
+```bash
+docker pull irinapendriak/final_predictor:v.0.3
+```
+2. Run the docker image:
+```bash
+docker run --network host -d irinapendriak/final_predictor:v.0.3
+```
+
+It uses port **5444**.
