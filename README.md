@@ -7,7 +7,7 @@ The model uses only listings that are available for rent and located in St.Peter
 
 
 ## Model, choosen framework, hyperparams
-Both created machine learning models are CatBoost models but with different features used.
+Both created machine learning models are **CatBoost models** but with different features used.
 
 Feautures for the models:
 | Model 1      | Model 2       |
@@ -21,7 +21,26 @@ Feautures for the models:
 |              | kitchen_area  |
 |              | living_area   |
 
-Hyperparameteres were chosen based on 
+Hyperparameteres were chosen based on **GridSearch** with 3 folds.
+
+Hyperparameters used in **the first model**:
+* Depth: 7
+* Iterations: 1000
+* Learning rate: 0.01
+
+Hyperparameters used in **the second model**:
+* Depth: 9
+* Iterations: 1000
+* Learning rate: 0.01
+
+Test results:
+|              | Model 1      | Model 2      |
+| :----------- | :----------- | :----------- |
+| MAE          | 0.345        | 0.330        |
+| MSE          | 0.369        | 0.353        |
+| RMSE         | 0.607        | 0.594        |
+
+
 
 ## How to install instructions and run your app with virtual environment
 1. Connect to your virtual machine.
